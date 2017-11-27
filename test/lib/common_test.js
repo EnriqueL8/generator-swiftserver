@@ -509,7 +509,7 @@ exports.itHasServiceInCloudFoundryManifest = function (serviceDescription, servi
 
 exports.itHasServiceInBluemixPipeline = function (serviceDescription, serviceLabel, servicePlan, serviceName) {
   it(`bluemix pipeline contains ${serviceDescription} create-service command`, function () {
-    assert.fileContent(exports.bluemixPipelineFile, `cf create-service "${serviceLabel}" "${servicePlan}" "${serviceName}"`)
+    assert.fileContent(exports.bluemixPipelineFile, `cf create-service ${serviceLabel} ${servicePlan} ${serviceName}`)
   })
 }
 
